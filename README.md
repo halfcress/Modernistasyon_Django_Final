@@ -1,1 +1,2 @@
-# Modernistasyon_Django_Final
+# Modernistasyon_Final
+ 
