@@ -1,0 +1,50 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block page_title %}
+    personel.html
+{% endblock page_title %}
+   
+{% block content %}
+
+<div class="container">
+
+    <div class="row">
+    
+        {% for personel in personel %}
+            <div class="card mb-3">
+                <div class="row">
+                    <div class="col-md-3">
+                        <img src="{{ personel.resim.url }}" alt="" class="img-fluid rounded-start">
+                    </div>
+                    <div class="col-md-9">
+                        <div class="card-body">
+                            <h3 class="card-title"><b>{{ personel.ad }}</h3></b>
+                            <p class="card-text"><b>Yaş:</b> {{ personel.yas }}</p>
+                            <p class="card-text"><b>Cinsiyet:</b> {{ personel.cinsiyet }}</p>
+                            <p class="card-text"><b>Başlama Tarihi:</b> {{ personel.baslamaTarih }}</p>
+                            <p class="card-text"><b>Bağlı Olduğu Birim:</b> {{ personel.birim }}</p>
+                            <p class="card-text"><b>Çalıştığı Proje:</b> {{ personel.birim.baglanti}}</p>
+                            <p class="card-text"><b>Çalıştığı Firma:</b> {{ personel.birim.baglanti.firma}}</p>
+                        
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        {% endfor %}
+    </div>
+  
+
+{% endblock %}
+
+
+{% block js_files %}
+    <script src="{% static 'js/script.js' %}""></script>
+{% endblock %}

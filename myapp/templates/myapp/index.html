@@ -1,0 +1,45 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block page_title %}
+    index.html
+{% endblock page_title %}
+   
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        <div class="col">
+            
+            <a href={% url 'personel' %}>
+                <p style="text-align:center;"><img src="{% static 'images/personeller.jpg' %}" alt="My image"></a>
+            <a href={% url 'santiye' %}>
+                <img src="{% static 'images/santiyeler.jpg' %}" alt="My image"></a>
+            <a href={% url 'firma' %}>
+                <img src="{% static 'images/firma.jpg' %}" alt="My image"></a>
+            <a href={% url 'hakedis' %}>
+                <img src="{% static 'images/hakedis.jpg' %}" alt="My image"></p></a>
+           
+            <hr>
+          
+            
+            <ul>
+                
+            </ul>
+           
+        </div>
+    </div>
+</div>
+  
+
+{% endblock %}
+
+
+{% block js_files %}
+    <script src="{% static 'js/script.js' %}""></script>
+{% endblock %}

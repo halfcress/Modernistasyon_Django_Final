@@ -1,0 +1,59 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block page_title %}
+    santiye.html
+{% endblock page_title %}
+   
+{% block content %}
+
+<div class="container">
+
+    <div class="row">
+
+        {{ personel }}
+    
+        {% for santiye in santiye %}
+            <div class="card mb-3">
+                <div class="row">
+                    <div class="col-md-3">
+                        <img src="{{ santiye.resim.url }}" alt="" class="img-fluid rounded-start">
+                    </div>
+                    <div class="col-md-9">
+                        <div class="card-body">
+                            <h3 class="card-title"><b>{{ santiye.isim }}</h3></b>
+                                <p class="card-text"><b>Şantiye Kasası:</b></p> 
+                                <p>{{santiye.miktar}} </p> 
+                                <p class="card-text"><b>Araçlar:</b></p>
+                                    <p>{% for araclar in santiye.araclar.all %}<li>{{ araclar }}</li>{% endfor %}</p>
+                                    <!--{% for santiye in santiye.araclar.all %}
+                                     Şantiye adı: {{ santiye.isim }}, Araçlar: {{ santiye.araclar.all|join:", " }}
+                                    {% endfor %}-->
+                                    <!--ManyToMany geçişi için buraya tekrar göz atmak gerekebilir.-->
+                                    <!--Üst kümeden alt kümeye inildi many to many ile-->
+                                <p class="card-text"><b>Çalışan Personeller:</b></p>
+                                <p>{% for personel in santiye.personel_set.all %}
+                                    <li>{{personel.ad}}</li>
+                                {% endfor %}</p>       
+                                <!--OneToMany geçişi için buraya tekrar göz atmak gerekebilir.-->
+                                <!--Üst satırdan alt satıra inildi one to many ile-->   
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        {% endfor %}
+    </div>
+  
+
+{% endblock %}
+
+
+{% block js_files %}
+    <script src="{% static 'js/script.js' %}""></script>
+{% endblock %}

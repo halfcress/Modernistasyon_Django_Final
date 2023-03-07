@@ -1,0 +1,69 @@
+{% extends 'layout.html' %}
+
+{% load static %}
+
+{% block css_files %}
+    <link rel="stylesheet" href="{% static 'css/style.css' %}">
+{% endblock %}
+
+{% block page_title %}
+    firma.html
+{% endblock page_title %}
+   
+{% block content %}
+
+<div class="container">
+    <div class="row">
+        {% for s in sirket %}
+            <div class="card mb-3">
+                <div class="row">
+                    <div class="col-md-3">
+                        <img src="{{ firma.resim.url }}" alt="" class="img-fluid rounded-start">
+                    </div>
+                    <div class="col-md-9">
+                        <div class="card-body">
+                            <p class="card-text"><b><h3>{{s.isim}}:</h3></b></p>
+                            <p class="card-text"><b>Projeler ve Kalan Tutarlar:</b>
+                                
+
+                                {% for p in s.proje_set.all %}
+                                <li>{{p.ad}} / Total Proje Bedeli: {{p.total}} TL</li>
+                                <li>{{p.ad}} / Kalan Tutar: {{p.miktar}} TL</li>
+                                <p>-------------------------------------------------------</p>
+                                {% endfor %}<p></p>
+                                    
+
+                            
+                            <b>Personel Listesi:</b><p></p>
+                            {% for p in s.proje_set.all %}
+                                {% for san in p.santiye_set.all %}
+                                    {% for per in san.personel_set.all %}
+                                        <li>{{per.ad}}</li>
+                                    {% endfor %}
+                                {% endfor %}
+                            {% endfor %}
+                            
+                            <p class="card-text"><b></b></p><b>Şantiye Listesi:</b><p></p>
+                            {% for p in s.proje_set.all %}
+                                {% for san in p.santiye_set.all %}
+                                    <li>{{san.isim}}</li>
+                                {% endfor %}
+                            {% endfor %}
+                            
+                
+                            
+                        </div>
+                    </div>
+                </div>
+            </div>
+        {% endfor %}
+    </div>
+</div>     
+
+
+{% endblock %}
+
+
+{% block js_files %}
+    <script src="{% static 'js/script.js' %}""></script>
+{% endblock %}
