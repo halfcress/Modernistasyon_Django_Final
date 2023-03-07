@@ -5,6 +5,10 @@
 **Kullanıcı adı:** admin
 **Şifre:** admin123
 
+**ER-Diagram:**
+
+![alt text](https://github.com/halfcress/Modernistasyon_Django_Final/blob/main/ER-diagram.png?raw=true)
+
 **Random personel oluşturmak için kullandığım algoritma:**
 
 ```
