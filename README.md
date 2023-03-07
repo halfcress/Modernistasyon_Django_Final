@@ -7,7 +7,7 @@
 
 **ER-Diagram:**
 
-![alt text](https://github.com/halfcress/Modernistasyon_Django_Final/blob/main/ER-diagram.png?raw=true)
+![alt text](https://github.com/halfcress/Modernistasyon_Django_Final/blob/main/ER-Diagram.png?raw=true)
 
 **Random personel oluşturmak için kullandığım algoritma:**
 
