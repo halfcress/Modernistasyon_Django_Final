@@ -9,6 +9,17 @@
 
 ![alt text](https://github.com/halfcress/Modernistasyon_Django_Final/blob/main/ER-Diagram.png?raw=true)
 
+**Merhaba!**
+
+Proje genel hatlarıyla inşaat şirketlerine yönelik hazırlanmıştır.
+Giriş yapmadan herhangi bir sayfaya ulaşılamamaktadır.
+Anasayfa ikon yönlendirmelidir. NavBar da kullanım için tercih edilebilir.
+Yapılan hakedişler DB ortamında işlenmektedir.
+Şantiyeler, Personeller ve Firmalar kendilerine ait sayfalarda özellikleri ile birlikte indexlenmektedir.
+
+
+
+
 **Random personel oluşturmak için kullandığım algoritma:**
 
 ```
